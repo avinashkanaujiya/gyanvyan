@@ -40,16 +40,16 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 680px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px;
 }
 
 /* Header */
 .header {
     background-color: var(--bg-primary);
     border-bottom: 1px solid var(--border);
-    padding: 1.2rem 0;
+    padding: 0.8rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -93,19 +93,19 @@ body {
 
 /* Main Content */
 .main-content {
-    margin: 3rem auto;
+    margin: 1.5rem auto;
     min-height: calc(100vh - 200px);
 }
 
 /* Tags Filter Section */
 .tags-filter-section {
-    padding: 2rem 0;
-    margin-bottom: 2rem;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
     border-bottom: 1px solid var(--border);
 }
 
 .tags-filter-section h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
     color: var(--text-primary);
     font-size: 0.75rem;
     font-weight: 600;
@@ -150,8 +150,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
     border-bottom: 1px solid var(--border);
 }
 
@@ -186,14 +186,14 @@ body {
 .posts-grid {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 1.5rem;
 }
 
 .post-card {
     background: transparent;
     border: none;
     border-bottom: 1px solid var(--border);
-    padding: 0 0 2rem 0;
+    padding: 0 0 1.2rem 0;
     cursor: pointer;
     transition: var(--transition);
 }
@@ -218,8 +218,8 @@ body {
 
 .post-meta {
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 0.75rem;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
     font-size: 0.8rem;
     color: var(--text-secondary);
     text-transform: uppercase;
@@ -228,7 +228,7 @@ body {
 
 .post-excerpt {
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
     line-height: 1.65;
     font-size: 0.95rem;
 }
@@ -266,23 +266,23 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: 4rem 2rem;
+    padding: 2rem 1.5rem;
 }
 
 .modal-content {
     background: var(--bg-primary);
     border: 1px solid var(--border);
-    max-width: 720px;
+    max-width: 680px;
     width: 100%;
     position: relative;
-    padding: 3rem;
+    padding: 2rem;
     box-shadow: 0 4px 24px var(--shadow);
 }
 
 .modal-close {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 1rem;
+    right: 1rem;
     background: transparent;
     border: 1px solid var(--border);
     font-size: 1.2rem;
@@ -307,15 +307,15 @@ body {
 .post-full h1 {
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--text-primary);
     letter-spacing: -0.02em;
     line-height: 1.3;
 }
 
 .post-full .post-meta {
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid var(--border);
 }
 
@@ -326,8 +326,8 @@ body {
 }
 
 .post-full-content h2 {
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
+    margin-top: 1.8rem;
+    margin-bottom: 0.7rem;
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--text-primary);
@@ -335,15 +335,15 @@ body {
 }
 
 .post-full-content h3 {
-    margin-top: 2rem;
-    margin-bottom: 0.8rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-primary);
 }
 
 .post-full-content p {
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.9rem;
     color: var(--text-secondary);
 }
 
@@ -362,7 +362,7 @@ body {
     padding: 1rem;
     border-radius: 2px;
     overflow-x: auto;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
 
 .post-full-content pre code {
@@ -373,18 +373,18 @@ body {
 .post-full-content ul,
 .post-full-content ol {
     margin-left: 1.5rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.9rem;
     color: var(--text-secondary);
 }
 
 .post-full-content li {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
 }
 
 .post-full-content blockquote {
     border-left: 2px solid var(--accent);
     padding-left: 1.2rem;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     color: var(--text-secondary);
     font-style: italic;
 }
@@ -404,10 +404,10 @@ body {
 .footer {
     background: transparent;
     border-top: 1px solid var(--border);
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     text-align: center;
     color: var(--text-secondary);
-    margin-top: 5rem;
+    margin-top: 3rem;
     font-size: 0.85rem;
 }
 
@@ -434,19 +434,19 @@ body {
     }
 
     .main-content {
-        margin: 2rem auto;
+        margin: 1rem auto;
     }
 
     .posts-grid {
-        gap: 2rem;
+        gap: 1.2rem;
     }
 
     .post-card {
-        padding: 0 0 1.5rem 0;
+        padding: 0 0 1rem 0;
     }
 
     .modal-content {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem;
     }
 
     .post-full h1 {
@@ -454,6 +454,6 @@ body {
     }
 
     .modal.active {
-        padding: 2rem 1rem;
+        padding: 1.5rem 1rem;
     }
 }
