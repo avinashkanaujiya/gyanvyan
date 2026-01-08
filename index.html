@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Blog</title>
-    <link rel="stylesheet" href="styles.css?v=20260108">
+    <link rel="stylesheet" href="styles.css?v=20260108-2">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -22,31 +22,17 @@
     </header>
 
     <main class="container main-content">
-        <aside class="sidebar">
-            <div class="sidebar-section">
-                <h3>About</h3>
-                <p class="about-text">Welcome to my personal blog where I share my thoughts, experiences, and knowledge.</p>
-            </div>
-
-            <div class="sidebar-section">
-                <h3>Categories</h3>
-                <div id="categoriesFilter" class="categories">
-                    <button class="category-btn active" data-category="all">All Posts</button>
-                </div>
-            </div>
-
-            <div class="sidebar-section">
-                <h3>Tags</h3>
-                <div id="tagsFilter" class="tags"></div>
-            </div>
-        </aside>
-
         <section class="posts-section">
             <div class="posts-header">
                 <h2>Recent Posts</h2>
                 <div class="search-box">
                     <input type="text" id="searchInput" placeholder="Search posts..." />
                 </div>
+            </div>
+
+            <div class="tags-filter-section">
+                <h3>Filter by Tags</h3>
+                <div id="tagsFilter" class="tags"></div>
             </div>
 
             <div id="postsContainer" class="posts-grid">
@@ -70,6 +56,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260108"></script>
+    <script src="script.js?v=20260108-2"></script>
 </body>
 </html>

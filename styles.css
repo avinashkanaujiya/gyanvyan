@@ -93,69 +93,24 @@ body {
 
 /* Main Content */
 .main-content {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 4rem;
     margin: 3rem auto;
     min-height: calc(100vh - 200px);
 }
 
-/* Sidebar */
-.sidebar {
-    position: sticky;
-    top: 100px;
-    height: fit-content;
+/* Tags Filter Section */
+.tags-filter-section {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
 }
 
-.sidebar-section {
-    padding: 0;
-    margin-bottom: 3rem;
-}
-
-.sidebar-section h3 {
+.tags-filter-section h3 {
     margin-bottom: 1rem;
     color: var(--text-primary);
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-}
-
-.about-text {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-/* Categories & Tags */
-.categories {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-}
-
-.category-btn {
-    background: transparent;
-    border: none;
-    border-left: 2px solid transparent;
-    padding: 0.4rem 0;
-    padding-left: 0.8rem;
-    cursor: pointer;
-    text-align: left;
-    color: var(--text-secondary);
-    transition: var(--transition);
-    font-size: 0.9rem;
-}
-
-.category-btn:hover {
-    color: var(--text-primary);
-    border-left-color: var(--border);
-}
-
-.category-btn.active {
-    color: var(--accent);
-    border-left-color: var(--accent);
-    font-weight: 500;
 }
 
 .tags {
@@ -458,22 +413,6 @@ body {
 
 /* Responsive */
 @media (max-width: 968px) {
-    .main-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .sidebar {
-        position: static;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-    }
-
-    .sidebar-section {
-        margin-bottom: 0;
-    }
-
     .posts-header {
         flex-direction: column;
         gap: 1rem;
@@ -496,12 +435,6 @@ body {
 
     .main-content {
         margin: 2rem auto;
-        gap: 2rem;
-    }
-
-    .sidebar {
-        grid-template-columns: 1fr;
-        gap: 2rem;
     }
 
     .posts-grid {
