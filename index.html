@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">My Blog</h1>
+                <nav class="nav">
+                    <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>About</h3>
+                <p class="about-text">Welcome to my personal blog where I share my thoughts, experiences, and knowledge.</p>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Categories</h3>
+                <div id="categoriesFilter" class="categories">
+                    <button class="category-btn active" data-category="all">All Posts</button>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Tags</h3>
+                <div id="tagsFilter" class="tags"></div>
+            </div>
+        </aside>
+
+        <section class="posts-section">
+            <div class="posts-header">
+                <h2>Recent Posts</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search posts..." />
+                </div>
+            </div>
+
+            <div id="postsContainer" class="posts-grid">
+                <!-- Blog posts will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <article id="postContent" class="post-full">
+                <!-- Full post content will be loaded here -->
+            </article>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 My Personal Blog. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
