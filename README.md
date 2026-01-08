@@ -43,10 +43,15 @@ Then visit `http://localhost:8000` in your browser.
 
 ```
 .
-├── index.html          # Main HTML file
-├── styles.css          # All styling including dark mode
-├── script.js           # Blog functionality and data
-└── README.md           # This file
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      # GitHub Actions deployment workflow
+├── .nojekyll               # Tells GitHub Pages not to use Jekyll
+├── 404.html                # Custom 404 error page
+├── index.html              # Main HTML file
+├── styles.css              # All styling including dark mode
+├── script.js               # Blog functionality and data
+└── README.md               # This file
 ```
 
 ## Adding Your Own Blog Posts
@@ -134,24 +139,96 @@ Edit the about text in the sidebar section of `index.html`:
 
 ## Deployment
 
-### GitHub Pages
+### GitHub Pages (Recommended)
 
-1. Push your code to a GitHub repository
-2. Go to Settings → Pages
-3. Select the branch to deploy (usually `main`)
-4. Your blog will be available at `https://yourusername.github.io/repository-name`
+This blog is optimized for GitHub Pages deployment with automated workflows.
+
+#### Method 1: Automated Deployment with GitHub Actions (Recommended)
+
+1. **Push your code to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+2. **Enable GitHub Pages:**
+   - Go to your repository on GitHub
+   - Navigate to **Settings** → **Pages**
+   - Under "Build and deployment":
+     - Source: Select **GitHub Actions**
+
+3. **Automatic deployment:**
+   - The included GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically deploy your blog whenever you push to the `main` or `master` branch
+   - Check the **Actions** tab to see deployment progress
+   - Your blog will be available at `https://yourusername.github.io/repository-name`
+
+#### Method 2: Manual Branch Deployment
+
+1. **Push your code to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+2. **Enable GitHub Pages:**
+   - Go to your repository on GitHub
+   - Navigate to **Settings** → **Pages**
+   - Under "Build and deployment":
+     - Source: Select **Deploy from a branch**
+     - Branch: Select **main** (or **master**) and **/ (root)**
+     - Click **Save**
+
+3. **Wait a few minutes:**
+   - GitHub Pages will build and deploy your site
+   - Your blog will be available at `https://yourusername.github.io/repository-name`
+
+#### What's Included for GitHub Pages:
+
+- **`.nojekyll`** - Prevents GitHub Pages from processing files with Jekyll
+- **`404.html`** - Custom 404 error page with matching design
+- **GitHub Actions workflow** - Automated deployment on push
+- **Static files only** - No build process needed, instant deployment
+
+#### Custom Domain (Optional)
+
+1. In your repository, go to **Settings** → **Pages**
+2. Under "Custom domain", enter your domain name
+3. Add a `CNAME` file to your repository root with your domain:
+   ```bash
+   echo "yourdomain.com" > CNAME
+   git add CNAME
+   git commit -m "Add custom domain"
+   git push
+   ```
+4. Configure DNS records with your domain provider:
+   - Add a CNAME record pointing to `yourusername.github.io`
 
 ### Netlify
 
 1. Sign up for [Netlify](https://netlify.com)
-2. Drag and drop your project folder
-3. Your blog is live!
+2. Drag and drop your project folder, or connect your GitHub repository
+3. Netlify will automatically detect it's a static site
+4. Your blog is live instantly!
+5. Optional: Configure custom domain in Netlify settings
 
 ### Vercel
 
 1. Sign up for [Vercel](https://vercel.com)
 2. Import your GitHub repository
-3. Deploy with one click
+3. Vercel will auto-detect the configuration
+4. Deploy with one click
+5. Your blog will be live at `https://your-project.vercel.app`
+
+### Other Hosting Options
+
+Since this is a static site, you can host it anywhere:
+- **Cloudflare Pages** - Free, fast, with built-in CI/CD
+- **Surge.sh** - Simple CLI deployment: `surge .`
+- **Firebase Hosting** - Google's hosting platform
+- **AWS S3 + CloudFront** - Scalable cloud hosting
+- **Any web server** - Just upload the files via FTP/SFTP
 
 ## Browser Support
 
