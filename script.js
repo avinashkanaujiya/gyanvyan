@@ -4,7 +4,6 @@ const blogPosts = [
         id: 1,
         title: "Getting Started with Web Development",
         date: "2026-01-05",
-        category: "Web Development",
         tags: ["html", "css", "javascript"],
         excerpt: "Learn the fundamentals of web development and start building your first website.",
         content: `# Getting Started with Web Development
@@ -72,7 +71,6 @@ Happy coding!`
         id: 2,
         title: "The Power of Responsive Design",
         date: "2026-01-03",
-        category: "Design",
         tags: ["css", "responsive", "mobile"],
         excerpt: "Understanding responsive design principles and how to create websites that work on all devices.",
         content: `# The Power of Responsive Design
@@ -138,7 +136,6 @@ Remember: responsive design is about creating the best experience for all users,
         id: 3,
         title: "Introduction to Modern JavaScript",
         date: "2026-01-01",
-        category: "Programming",
         tags: ["javascript", "es6", "programming"],
         excerpt: "Explore modern JavaScript features including arrow functions, async/await, and more.",
         content: `# Introduction to Modern JavaScript
@@ -214,7 +211,6 @@ Modern JavaScript makes code more readable and maintainable. Keep learning and e
         id: 4,
         title: "Building Better APIs",
         date: "2025-12-28",
-        category: "Backend",
         tags: ["api", "rest", "backend"],
         excerpt: "Best practices for designing and implementing RESTful APIs that developers love.",
         content: `# Building Better APIs
@@ -292,7 +288,6 @@ Building great APIs takes practice, but following these principles will set you 
 ];
 
 // State management
-let currentFilter = 'all';
 let currentTags = [];
 let searchQuery = '';
 
@@ -320,23 +315,9 @@ function updateThemeIcon(theme) {
 
 // Initialize blog
 function init() {
-    renderCategories();
     renderTags();
     renderPosts();
     setupEventListeners();
-}
-
-// Render categories
-function renderCategories() {
-    const categories = ['all', ...new Set(blogPosts.map(post => post.category))];
-    const categoriesContainer = document.getElementById('categoriesFilter');
-
-    categoriesContainer.innerHTML = categories.map(category => `
-        <button class="category-btn ${category === 'all' ? 'active' : ''}"
-                data-category="${category}">
-            ${category === 'all' ? 'All Posts' : category}
-        </button>
-    `).join('');
 }
 
 // Render tags
@@ -352,11 +333,6 @@ function renderTags() {
 // Filter and render posts
 function renderPosts() {
     let filteredPosts = blogPosts;
-
-    // Filter by category
-    if (currentFilter !== 'all') {
-        filteredPosts = filteredPosts.filter(post => post.category === currentFilter);
-    }
 
     // Filter by tags
     if (currentTags.length > 0) {
@@ -386,7 +362,6 @@ function renderPosts() {
             <h3>${post.title}</h3>
             <div class="post-meta">
                 <span>📅 ${formatDate(post.date)}</span>
-                <span>📂 ${post.category}</span>
             </div>
             <p class="post-excerpt">${post.excerpt}</p>
             <div class="post-tags">
@@ -425,7 +400,6 @@ function showPost(postId) {
         <h1>${post.title}</h1>
         <div class="post-meta">
             <span>📅 ${formatDate(post.date)}</span>
-            <span>📂 ${post.category}</span>
             <div class="post-tags">
                 ${post.tags.map(tag => `<span class="post-tag">#${tag}</span>`).join('')}
             </div>
@@ -448,19 +422,6 @@ function closeModal() {
 
 // Setup event listeners
 function setupEventListeners() {
-    // Category filter
-    document.getElementById('categoriesFilter').addEventListener('click', function(e) {
-        if (e.target.classList.contains('category-btn')) {
-            currentFilter = e.target.dataset.category;
-
-            // Update active state
-            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-            e.target.classList.add('active');
-
-            renderPosts();
-        }
-    });
-
     // Tag filter
     document.getElementById('tagsFilter').addEventListener('click', function(e) {
         if (e.target.classList.contains('tag-btn')) {
